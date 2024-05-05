@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}" />
     <link rel="stylesheet" href="{% static 'css/vanilla.css' %}" />
-
+    <link rel="icon" type="image/x-icon" href="{%static 'img\favicon.ico'%}" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
       rel="stylesheet"
@@ -23,6 +23,17 @@
     <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
   </head>
   <body>
+    <style>
+      @media (max-width: 768px) {
+        #logo {
+          max-width: 6.25rem; /* Adjusted maximum width for smaller screens */
+          width: 4.063rem; /* Adjusted width for smaller screens */
+          height: auto; /* Adjusted height for smaller screens */
+          top: 5px; /* Adjusted distance from top for smaller screens */
+          left: 5px; /* Adjusted distance from left for smaller screens */
+        }
+      }
+    </style>
     <div class="fixed-side-navbar">
       <ul class="nav flex-column">
         <li class="nav-item">
@@ -42,10 +53,16 @@
         </li>
       </ul>
     </div>
-
+    <div class="header"></div>
     <div class="parallax-content baner-content" id="home">
       <div class="container">
-        <div class="first-content">
+        <img
+          src="{% static 'img/Shortversion-logo.png' %}"
+          alt="Logo"
+          id="logo"
+          style="width: 100px; position: absolute; top: 25px; left: 10px"
+        />
+        <div class="first-content" style="margin-top: -6.25rem">
           <h1>El Samar Holidays</h1>
           <span><em>Today.</em> you travel with us</span>
           <div class="primary-button">
