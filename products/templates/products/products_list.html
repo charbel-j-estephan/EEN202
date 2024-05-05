@@ -1,0 +1,462 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>El Samar Holidays</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/fontAwesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/hero-slider.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/vanilla.css' %}" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+  </head>
+  <body>
+    <div class="fixed-side-navbar">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#home"><span>Intro</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services"><span>Services</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#portfolio"><span>Portfolio</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#our-story"><span>Our Story</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact-us"><span>Contact Us</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="parallax-content baner-content" id="home">
+      <div class="container">
+        <div class="first-content">
+          <h1>El Samar Holidays</h1>
+          <span><em>Today.</em> you travel with us</span>
+          <div class="primary-button">
+            <a href="#services">Discover More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-content" id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="left-text">
+              <h4>More About Vanilla</h4>
+              <div class="line-dec"></div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+                <a rel="###" href="#">fugiat</a> Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum.
+              </p>
+              <ul>
+                <li>- Praesent porta urna id eros</li>
+                <li>- Curabitur consectetur malesuada</li>
+                <li>- Nam pretium imperdiet enim</li>
+                <li>- Sed viverra arcu non nisi efficitur</li>
+              </ul>
+              <div class="primary-button">
+                <a href="#portfolio">Learn More About Us</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="service-item">
+                  <h4>Classic Modern Design</h4>
+                  <div class="line-dec"></div>
+                  <p>
+                    Sed lacinia ligula est, at venenatis ex iaculis quis. Morbi
+                    sollicitudin nulla eget odio pellentesque.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="service-item">
+                  <h4>Unique &amp; Creative Ideas</h4>
+                  <div class="line-dec"></div>
+                  <p>
+                    Sed lacinia ligula est, at venenatis ex iaculis quis. Morbi
+                    sollicitudin nulla eget odio pellentesque.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="service-item">
+                  <h4>Effective Team Work</h4>
+                  <div class="line-dec"></div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    lacinia ligula est, at venenatis ex iaculis quis.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="service-item" , id="service-content">
+                  <h4>Fast Support 24/7</h4>
+                  <div class="line-dec"></div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    lacinia ligula est, at venenatis ex iaculis quis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="parallax-content projects-content"
+      id="portfolio"
+      style="background-position: center calc(50% + 624px); padding-top: 5rem"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="owl-testimonials" class="owl-carousel owl-theme">
+              {% for product in products %}
+              <div class="item">
+                <div class="testimonials-item">
+                  <a href="{% url 'products_detail' id=product.id %}">
+                    <img
+                      src="{{ product.image.url }}"
+                      alt="{{ product.title }}"
+                  /></a>
+                  <div class="text-content">
+                    <h4>{{ product.title }}</h4>
+                    <span>${{ product.price }}</span>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-content" id="our-story">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <div class="wrapper">
+              <section id="first-tab-group" class="tabgroup">
+                <div id="tab1">
+                  <img src="{% static 'img/1st-tab.jpg' %}" alt="" />
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Facilisi nullam vehicula ipsum a arcu cursus. Eu
+                    feugiat pretium nibh ipsum consequat nisl vel pretium.
+                    Faucibus interdum posuere lorem ipsum dolor. Aliquet
+                    porttitor lacus luctus accumsan tortor.
+                  </p>
+                </div>
+                <div id="tab2">
+                  <img src="{% static 'img/2nd-tab.jpg' %}" alt="" />
+                  <p>
+                    Aliquam eu ultrices risus, sed condimentum diam. Duis risus
+                    nulla, elementum vitae nisi a, ornare maximus nisl. Morbi et
+                    vehicula est. Cras at vulputate justo. Cras eu nulla metus.
+                    Ut et pretium velit. Pellentesque at neque tristique dui
+                    tempor venenatis.
+                  </p>
+                </div>
+                <div id="tab3">
+                  <img src="{% static 'img/3rd-tab.jpg' %}" alt="" />
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    lacinia ligula est, at venenatis ex iaculis quis. Morbi
+                    sollicitudin nulla eget odio pellentesque, sed cursus diam
+                    iaculis.
+                  </p>
+                </div>
+                <div id="tab4">
+                  <img src="{% static 'img/4th-tab.jpg' %}" alt="" />
+                  <p>
+                    Duis risus nulla, elementum vitae nisi a, ornare maximus
+                    nisl. Morbi et vehicula est. Cras at vulputate justo. Cras
+                    eu nulla metus. Ut et pretium velit. Pellentesque at neque
+                    tristique.
+                  </p>
+                </div>
+              </section>
+              <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                <li><a href="#tab1">2008 - 2014</a></li>
+                <li><a href="#tab2">2014 - 2016</a></li>
+                <li><a href="#tab3">2016 - 2019</a></li>
+                <li><a href="#tab4" class="active">2019 - Now</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="parallax-content contact-content" id="contact-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="contact-form">
+              <form id="contact" method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-md-12">
+                    <fieldset>
+                      <input
+                        name="name"
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Your name..."
+                        required=""
+                      />
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <input
+                        name="email"
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Your email..."
+                        required=""
+                      />
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <textarea
+                        name="message"
+                        rows="6"
+                        class="form-control"
+                        id="message"
+                        placeholder="Your message..."
+                        required=""
+                      ></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="btn">
+                        Send Message
+                      </button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14454.785961285086!2d55.1514304!3d25.0782742!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6dc8c929b361%3A0x73c6fe9951a58c3!2sSAMAR%20CORPORATE%20TRAVEL%20%26%20HOLIDAYS!5e0!3m2!1sen!2slb!4v1712084678948!5m2!1sen!2slb"
+                width="100%"
+                height="390"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      /* Custom CSS for the squared modal */
+      @media (min-width: 768px) {
+        /* Desktop */
+        .modal-lg {
+          max-width: 25% !important;
+          width: 25% !important;
+        }
+      }
+
+      @media (max-width: 767px) {
+        /* Mobile */
+        .modal-lg {
+          max-width: 75% !important;
+          width: 75% !important;
+          margin: 0 auto;
+        }
+      }
+
+      /* Ensure the modal is squared */
+      .modal-lg {
+        max-width: 100% !important;
+      }
+      .btn-secondary {
+        margin: 0 auto;
+      }
+    </style>
+
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p id="modal-message" class="text-center">
+              Your custom success message here.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="primary-button">
+              <a href="#home">Back To Top</a>
+            </div>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/elsamartravel/"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/elsamartravel.dxb/"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/samar-holidays-sarl/"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a href="mailto:samar.ae@elsamartravel.com"
+                  ><i class="fa fa-at"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+971 56 7615414"><i class="fa fa-whatsapp"></i></a>
+              </li>
+            </ul>
+            <p>
+              Copyright &copy; 2024 El Samar Holidays - Design:
+              <a
+                rel="develloper"
+                href="https://www.instagram.com/charbel_stephan/?igsh=MTdtaGxubXZnY3B5cw%3D%3D"
+                ><em>Stephan</em></a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="js/vendor/jquery-1.11.2.min.js"><\/script>'
+        );
+    </script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+      function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(cityName).style.display = "block";
+      }
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $(".fixed-side-navbar a, .primary-button a").on(
+          "click",
+          function (event) {
+            if (this.hash !== "") {
+              event.preventDefault();
+              var hash = this.hash;
+              $("html, body").animate(
+                {
+                  scrollTop: $(hash).offset().top,
+                },
+                800,
+                function () {
+                  window.location.hash = hash;
+                }
+              );
+            }
+          }
+        );
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#contact").on("submit", function (e) {
+          e.preventDefault(); // Prevent the form from submitting normally
+
+          $.ajax({
+            type: "POST",
+            url: $(this).attr("action"),
+            data: $(this).serialize(),
+            success: function (response) {
+              if (response.success) {
+                $("#exampleModalCenter").modal("show"); // Show the modal on success
+                $("#modal-message").text(response.message); // Set modal message
+
+                // Reset the form after successful submission
+                $("#contact")[0].reset();
+              } else {
+                // Handle error response if needed
+              }
+            },
+            error: function (xhr, status, error) {
+              // Handle error
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

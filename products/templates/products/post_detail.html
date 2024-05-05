@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>El Samar Holidays</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/fontAwesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/hero-slider.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/vanilla.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
+      rel="stylesheet"
+    />
+    <style>
+      .baner-content {
+        background-image: url("{% if product %}{{ product.Image_bk_1.url }}{% endif %}");
+      }
+      #service--content {
+        background-image: url("{% if product %}{{ product.Image_bk_2.url }}{% endif %}");
+      }
+      #service {
+        background-image: url("{% if product %}{{ product.Image_bk_3.url }}{% endif %}");
+      }
+    </style>
+    <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+  </head>
+  <body>
+    <div class="parallax-content baner-content" id="home">
+      <div class="container">
+        <div class="first-content">
+          <h1>{{ product.title }}</h1>
+          <span><em>{{ product.sub_title }}</em></span>
+          <div class="primary-button">
+            <a href="#services">Discover More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="service-content" , id="service--content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="left-text">
+              <h4 style="font-size: 300%">More About {{ product.title }}</h4>
+              <div class="line-dec"></div>
+              <br />
+              <br />
+              <h4>
+                <span style="font-weight: 700">Starting price</span>
+                <span
+                  style="color: #fd7e14; font-weight: 700; font-size: larger"
+                >
+                  $ {{product.price}}</span
+                >
+                <span style="font-size: small">/ per person</span>
+              </h4>
+              <br />
+              <h5 style="color: #fff; font-size: x-large">
+                {{product.time_spent}}
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <h2 style="text-align: center; color: #fff; font-size: 250%">
+        Want more details?
+      </h2>
+      <br />
+      <br />
+      <h4 style="text-align: center; color: #fff">
+        Download Our Package Brochure
+      </h4>
+      <br />
+      <div class="primary-button" , style="text-align: center">
+        <a href="{% url 'download_brochure' product_id=product.id %}"
+          >Download Our Package Brochure</a
+        >
+      </div>
+    </div>
+    <div class="service-content" id="service">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="left-text">
+              <h4>The Above Prices Includes</h4>
+              <div class="line-dec"></div>
+              <p>{{product.About}}</p>
+              <div class="primary-button">
+                <a href="{% url 'product_list' %}">Back To Main Page</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="service-item" , id="service-content">
+                  <h4>About {{ product.title}}</h4>
+                  <div class="line-dec"></div>
+                  <p>{{ product.Visit}}</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="service-item">
+                  <h4>What To Visit</h4>
+                  <div class="line-dec"></div>
+                  <p>{{ product.Visit}}</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="service-item">
+                  <h4>Suggested &amp; Tours</h4>
+                  <div class="line-dec"></div>
+                  <p>{{ product.Tours}}</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="service-item">
+                  <h4>Suggested &amp; Programs</h4>
+                  <div class="line-dec"></div>
+                  <p>{{ product.Programs}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="primary-button">
+              <a href="#home">Back To Top</a>
+            </div>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/elsamartravel/"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/elsamartravel.dxb/"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/samar-holidays-sarl/"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a href="mailto:samar.ae@elsamartravel.com"
+                  ><i class="fa fa-at"></i
+                ></a>
+              </li>
+              <li>
+                <a href="tel:+971 56 7615414"><i class="fa fa-whatsapp"></i></a>
+              </li>
+            </ul>
+            <p>
+              Copyright &copy; 2021 El Samar Holidays - Design:
+              <a
+                rel="develloper"
+                href="https://www.instagram.com/charbel_stephan/?igsh=MTdtaGxubXZnY3B5cw%3D%3D"
+                ><em>Stephan</em></a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="js/vendor/jquery-1.11.2.min.js"><\/script>'
+        );
+    </script>
+
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+      function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(cityName).style.display = "block";
+      }
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $(".fixed-side-navbar a, .primary-button a").on(
+          "click",
+          function (event) {
+            if (this.hash !== "") {
+              event.preventDefault();
+              var hash = this.hash;
+              $("html, body").animate(
+                {
+                  scrollTop: $(hash).offset().top,
+                },
+                800,
+                function () {
+                  window.location.hash = hash;
+                }
+              );
+            }
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
