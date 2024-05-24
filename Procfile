@@ -1,1 +1,1 @@
-web: gunicorn EL_SAMAR.wsgi
+web: gunicorn mysite.wsgi
