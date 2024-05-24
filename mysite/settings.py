@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +27,7 @@ SECRET_KEY = "75xnb*!ot8o_6lotuk-no@dwi@@8tq^7e9b=x$!fe3=+hk=yaa"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", ".pythonanywhere.com"]
+ALLOWED_HOSTS = ["EL_SAMAR.onrender.com", "elsamartravel.com"]
 
 
 # Application definition
@@ -38,7 +40,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "products",
-    # "contact",
 ]
 
 MIDDLEWARE = [
@@ -79,6 +80,9 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "default": dj_database_url.config(
+            default="postgres://user:password@localhost/dbname"
+        ),
     }
 }
 
