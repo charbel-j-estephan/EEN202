@@ -66,7 +66,7 @@ This Django project is designed to create a dynamic and user-friendly website fo
 - Ensure to update the `settings.py` file for production deployment, including database configuration, static files handling, and security settings.
 
 ## Contributors
-- [Your Name](https://github.com/charbel-j-estephan) - Project Lead & Developer
+- [Stephan](https://github.com/charbel-j-estephan) - Project Lead & Developer
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the `LICENSE` file for details.
